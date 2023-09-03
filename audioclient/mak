@@ -1,0 +1,25 @@
+#!/bin/sh
+#use static ffmpeg libs and mmdecoder lib
+echo $1
+
+Param="NODEP=yes"
+echo $Param
+if [ "$1" = R ]
+then 
+ Param="RELEASE=yes"
+fi
+MYMAKE="make  -f Makefile $Param"
+make clean -f Makefile
+$MYMAKE 
+
+#cp libAudioClient.so  ../../_exe/libAudioClient1.so -f
+mv libAudioClient.so  ../ -f
+
+#rm *.o -f
+find . -name "*.o" -type f -print -exec rm -rf {} \;  
+find . -name "*.a" -type f -print -exec rm -rf {} \;  
+find . -name "*.d" -type f -print -exec rm -rf {} \;  
+
+curDate=$(date +"%Y.%m.%d %H:%M:%S") 
+echo mak Done! @${curDate}
+

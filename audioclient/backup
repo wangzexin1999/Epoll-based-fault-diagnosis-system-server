@@ -1,0 +1,22 @@
+#!/bin/sh
+#pwd
+#dirname $0
+#echo `dirname $0`
+#basepath=$(cd `dirname $0`; pwd)
+#CUR = `basename `pwd``
+#CurFolder=`pwd` && dirname  $CurFolder
+#echo $CUR
+#echo $CurFolder
+echo "delete temp files..."
+sleep 1
+find . -name "*.o" -type f -print -exec rm -rf {} \;  
+find . -name "*.a" -type f -print -exec rm -rf {} \;  
+find . -name "*.d" -type f -print -exec rm -rf {} \;  
+
+CUR=$(basename `pwd`)
+echo $CUR
+tar -czvf ../_backup/${CUR}-`date +"%Y.%m.%d-%H.%M"`.tar.gz ../${CUR}
+curDate=$(date +"%Y.%m.%d %H:%M:%S") 
+echo backup done！@${curDate}
+
+

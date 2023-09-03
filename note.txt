@@ -1,0 +1,24 @@
+0、编写代码可以在windows下面用vs2022打开 **.sln
+1、linux下
+编译：./mak 2>&1| grep error:
+备份：./backup
+2、代码简要说明
+2.1client代码
+包括：tcp通讯、配置文件读取、数据队列和写日志（libmmdecoder.so）
+2.2server端代码
+包括：基于epoll 的 tcp server通讯、配置文件读取、数据队列和写日志（libmmdecoder.so）
+（1）client和server之间的传输的网络报文格式（自定义的应用层协议）：
+[ NetMsgHeader | msg-data]
+NetMsgHeader的定义参见AudioDataUnit.h,可以根据需要修改，注意client和server端同步更新即可。
+（2）server端可以向client端发送消息，client有接收代码。
+（3）server从接收的网络数据中解析出报文后，添加ServerMsgHeader头，保存一些必要的信息，然后存入队列：
+int64_t iRet = EnDataQueue(g_pRcvDataQueue[idx], &msgHeader, sizeof(ServerMsgHeader),
+可以有多个队列，实际本项目一个即可。
+（4）同时，void AudioServer::workerFunc(int idx) 处理Server接收到的数据报文。对应的线程函数：void* workerThread(void* argv) {
+	fprintf(stderr, "Worker Thread Start! %s\n", g_strCurTime);
+	int idx = (int64_t)argv;
+    AudioServer::getPointer()->workerFunc(idx);
+	fprintf(stderr, "Worker Thread finished! %s\n", g_strCurTime);
+	return nullptr;
+}
+

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="AudioDataUnit.h" />
+    <ClInclude Include="AudioServer.h" />
+    <ClInclude Include="CCfgFileParser.h" />
+    <ClInclude Include="EpollServer.h" />
+    <ClInclude Include="global.h" />
+    <ClInclude Include="MyFile.h" />
+    <ClInclude Include="Wave.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AudioServer.cpp" />
+    <ClCompile Include="CCfgFileParser.cpp" />
+    <ClCompile Include="EpollServer.cpp" />
+    <ClCompile Include="global.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="MyFile.cpp" />
+    <ClCompile Include="Wave.cpp" />
+  </ItemGroup>
+</Project>

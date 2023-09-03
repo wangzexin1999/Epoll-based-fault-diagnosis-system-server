@@ -1,0 +1,6 @@
+libAudioClient.so模块读取配置文件：AudioFunction.ini
+
+2021.11.09
+（1）废弃日志路径的配置项：AudioClientLogPath
+（2）采用配置项：LogPath，和aufilter一致
+（3）可以设置是否写日志AudioClientWriteLog，默认不写

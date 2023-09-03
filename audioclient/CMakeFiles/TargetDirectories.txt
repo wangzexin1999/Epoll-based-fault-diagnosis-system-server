@@ -1,0 +1,3 @@
+/home/liuxiu/smallsample/wangzexin/FengDian/epollproject/audioclient/CMakeFiles/edit_cache.dir
+/home/liuxiu/smallsample/wangzexin/FengDian/epollproject/audioclient/CMakeFiles/audioClient.dir
+/home/liuxiu/smallsample/wangzexin/FengDian/epollproject/audioclient/CMakeFiles/rebuild_cache.dir

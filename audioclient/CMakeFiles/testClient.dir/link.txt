@@ -1,0 +1,1 @@
+/usr/bin/c++      CMakeFiles/testClient.dir/main.cpp.o CMakeFiles/testClient.dir/TcpClient.cpp.o  -o testClient  -L/home/liuxiu/smallsample/wangzexin/FengDian/epollproject -lmmdecoder -lAudioClient -Wl,-rpath,/home/liuxiu/smallsample/wangzexin/FengDian/epollproject 

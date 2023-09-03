@@ -1,0 +1,7 @@
+增加配置项：
+（1）SysSettings::QueryQueueMB：系统的数据接收队列大小，单位MB
+（2）SysSettings::ProcessThreadCnt：设定处理线程的数量（分类、语种识别、下发查询的线程数量统一用此数值），默认值10
+      设定：处理包括：分类和语种识别、查询的线程数（分类和语种识别必须多线程，否则分类处理不完）
+（3）SysSettings::NotConcurentQueryAudioDLL：QueryAudioDLL不能并发调用，默认0
+     如果QueryAudioDLL（查询数据下发）函数不支持并发调用，设定此配置项为1；
+	 
